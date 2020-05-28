@@ -67,7 +67,9 @@ def install_kolibri_flatpak():
 
 
 def run_kolibri(args):
-    arch = subprocess.check_output(["flatpak", "--default-arch"]).strip()
+    arch = subprocess.check_output(
+        ["flatpak", "--default-arch"], encoding="utf-8",
+    ).strip()
     run_command(
         [
             "flatpak",
